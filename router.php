@@ -1,12 +1,14 @@
 <?php
+    session_start();
     $requestURI = $_SERVER['REQUEST_URI'];
     $path = explode('/', $requestURI);
     if($path[1]=="reg"){
-        echo "Страница регистрации";
+        $content = file_get_contents('reg.php');
     }elseif($path[1]=="login"){
-        echo "Страница авторизации";
+        $content = file_get_contents('login.php');
+    }elseif($path[1]=="profile"){
+        $content = file_get_contents('profile.php');
     }else{
         echo "Страница не найдена 404";
     }
-    require_once('template.php')
-    
+    require_once('template.php');
