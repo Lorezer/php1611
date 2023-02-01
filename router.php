@@ -8,4 +8,5 @@
     }else{
         echo "Страница не найдена 404";
     }
+    require_once('template.php')
     
